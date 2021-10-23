@@ -1,0 +1,159 @@
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background-color: #edf2f8;
+    font-size: 13px;
+}
+
+img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.hero-center {
+    padding: 10em;
+    min-height: 80vh;
+    display: grid;
+    place-content: center;
+    gap: 3em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "daniel daniel jonathan kira" "jessica patrick patrick kira";
+}
+
+.hero-center>div {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    gap: 1.5em;
+}
+
+.ctn-1 {
+    background: var(--Moderate-violet) url(./img/bg-pattern-quotation.svg) no-repeat 80% 0%;
+    grid-area: daniel;
+}
+
+.ctn-2 {
+    background: var(--Very-dark-grayish-blue);
+    grid-area: jonathan;
+}
+
+.ctn-3 {
+    background: #fff;
+    grid-area: kira;
+}
+
+.ctn-4 {
+    background: #fff;
+    grid-area: jessica;
+}
+
+.ctn-5 {
+    background: var(--Very-dark-blackish-blue);
+    grid-area: patrick;
+}
+
+figure {
+    display: flex;
+    gap: 1.5em;
+}
+
+figcaption {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    color: var(--Light-grayish-blue);
+}
+
+.span {
+    color: var(--Light-grayish-blue);
+    opacity: 50%;
+}
+
+.review {
+    font-size: 1.5em;
+    color: var(--Light-grayish-blue);
+    font-weight: 600;
+}
+
+.story {
+    line-height: 1.3em;
+    font-size: 1.1em;
+    color: var(--Light-grayish-blue);
+    opacity: 70%;
+    padding-top: .5em;
+}
+
+.ctn-1 img,
+.ctn-5 img {
+    border: solid 2px #a775f1;
+}
+
+
+/* Start ctn-3 and ctn-4 text color */
+
+.ctn-3 figcaption,
+.ctn-4 figcaption {
+    color: var(--Very-dark-grayish-blue)
+}
+
+.ctn-3 .review,
+.ctn-4 .review {
+    color: var(--Very-dark-grayish-blue)
+}
+
+.ctn-3 .story,
+.ctn-4 .story {
+    color: var(--Very-dark-grayish-blue)
+}
+
+.ctn-3 .span,
+.ctn-4 .span {
+    color: var(--Very-dark-grayish-blue)
+}
+
+
+/* End ctn-3 and ctn-4 text color */
+
+@media only screen and (max-width: 716px) {
+    .hero-center {
+        padding: 2em;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr 1fr 2fr 2fr;
+        row-gap: auto;
+        gap: 2em;
+        grid-template-areas: "daniel" "jonathan" "jessica" "kira" "patrick";
+    }
+    .hero-center>div {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        gap: auto;
+        height: min-content;
+    }
+    .ctn-1 {
+        align-self: flex-end;
+    }
+}
